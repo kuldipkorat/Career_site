@@ -188,7 +188,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                  <p className="text-gray-600 text-sm">contact@kutchcareer.com</p>
+                  <p className="text-gray-600 text-sm">contact@career.io</p>
                 </div>
               </div>
             </div>
@@ -212,7 +212,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Visit Us</h3>
-                  <p className="text-gray-600 text-sm">Kutch, Gujarat, India</p>
+                  <p className="text-gray-600 text-sm">Remote First</p>
                 </div>
               </div>
             </div>

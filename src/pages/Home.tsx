@@ -143,10 +143,10 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-block px-4 py-2 bg-orange-500 rounded-full text-sm font-bold mb-6 animate-fade-in">
-              🎯 Your Career Partner in Kutch
+              🎯 Your Trusted Career Partner
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              Find the <span className="text-orange-300">Best Jobs</span> in Kutch and Beyond
+              Find the <span className="text-orange-300">Best Jobs</span> Anywhere
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-blue-50 animate-fade-in font-light" style={{ lineHeight: '1.6' }}>
               Browse open positions, submit your resume, or connect as a company or consultancy.
@@ -245,7 +245,7 @@ export function Home() {
             Latest Open <span className="text-blue-600">Jobs</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover exciting career opportunities from top companies and consultancies in Kutch
+            Discover exciting career opportunities from top companies and consultancies
           </p>
         </div>
 

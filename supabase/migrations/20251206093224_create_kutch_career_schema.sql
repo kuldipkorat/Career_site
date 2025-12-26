@@ -1,7 +1,7 @@
 /*
-  # Kutch Career Database Schema
-  
-  Creates the complete database structure for the Kutch Career job board platform.
+  # Career.io Database Schema
+
+  Creates the complete database structure for the Career.io job board platform.
   
   ## New Tables
   

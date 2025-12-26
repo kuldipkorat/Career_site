@@ -24,7 +24,7 @@ export function Header() {
             <div className="p-1.5 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg group-hover:shadow-md transition-all">
               <Briefcase className="w-8 h-8 text-blue-600 transition-transform group-hover:scale-110 group-hover:rotate-12" />
             </div>
-            <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Kutch Career</span>
+            <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Career.io</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">

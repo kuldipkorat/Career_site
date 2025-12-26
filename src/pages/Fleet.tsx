@@ -171,7 +171,7 @@ export function Fleet() {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join our exclusive fleet network to access premium hiring opportunities
-            and gain maximum visibility among qualified job seekers across Kutch.
+            and gain maximum visibility among qualified job seekers.
           </p>
         </div>
 
