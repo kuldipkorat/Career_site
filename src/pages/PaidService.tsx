@@ -176,8 +176,16 @@ export function PaidService() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen relative py-16 overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Business meeting"
+          className="w-full h-full object-cover opacity-5"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/95 via-orange-50/95 to-red-50/95"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl shadow-lg mb-6 transform hover:scale-105 transition-transform">
             <DollarSign className="w-10 h-10 text-white" />
@@ -192,7 +200,15 @@ export function PaidService() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-12">
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-xl p-8 border border-gray-100 h-fit sticky top-8">
+          <div className="lg:col-span-2 space-y-6">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Premium services"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 h-fit sticky top-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-10 bg-gradient-to-b from-orange-500 to-yellow-600 rounded-full"></div>
               <h2 className="text-3xl font-bold text-gray-900">What We Offer</h2>
@@ -214,6 +230,7 @@ export function PaidService() {
                 Contact us today to discuss custom pricing packages based on your hiring volume and requirements.
               </p>
             </div>
+          </div>
           </div>
 
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-xl p-10 border border-gray-100">

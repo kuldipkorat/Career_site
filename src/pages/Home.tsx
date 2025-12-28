@@ -135,10 +135,13 @@ export function Home() {
   return (
     <div className="min-h-screen">
       <section className="relative bg-blue-600 text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Professional workspace"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-700/90"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto">
@@ -285,8 +288,15 @@ export function Home() {
         )}
       </section>
 
-      <section className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-blue-600 text-white py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Team collaboration"
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="animate-fade-in">
               <div className="text-5xl font-extrabold mb-2">500+</div>
@@ -320,24 +330,42 @@ export function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {quickLinks.map((item, index) => (
-              <div
-                key={index}
-                className={`${item.bgColor} rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-gray-200`}
-              >
-                <div className={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md`}>
-                  <item.icon className={`w-8 h-8 ${item.iconColor}`} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed">{item.description}</p>
-                <Link
-                  to={item.link}
-                  className={`inline-block w-full text-center px-6 py-3 ${item.iconColor.replace('text-', 'bg-')} text-white font-bold rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl`}
+            {quickLinks.map((item, index) => {
+              const images = [
+                'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
+                'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+              ];
+              return (
+                <div
+                  key={index}
+                  className="relative rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
                 >
-                  {item.buttonText}
-                </Link>
-              </div>
-            ))}
+                  <div className="absolute inset-0">
+                    <img
+                      src={images[index]}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className={`absolute inset-0 ${item.bgColor.replace('bg-', 'bg-gradient-to-br from-')} to-white opacity-95`}></div>
+                  </div>
+                  <div className="relative z-10 p-8">
+                    <div className={`w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-md`}>
+                      <item.icon className={`w-8 h-8 ${item.iconColor}`} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-700 mb-6 leading-relaxed">{item.description}</p>
+                    <Link
+                      to={item.link}
+                      className={`inline-block w-full text-center px-6 py-3 ${item.iconColor.replace('text-', 'bg-')} text-white font-bold rounded-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl`}
+                    >
+                      {item.buttonText}
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

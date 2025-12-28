@@ -181,6 +181,13 @@ export function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="space-y-6">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Contact us"
+                className="w-full h-64 object-cover"
+              />
+            </div>
             <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-blue-50 rounded-lg">
