@@ -186,14 +186,14 @@ export function PaidService() {
         <div className="absolute inset-0 bg-gradient-to-br from-amber-50/95 via-orange-50/95 to-red-50/95"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl shadow-lg mb-6 transform hover:scale-105 transition-transform">
-            <DollarSign className="w-10 h-10 text-white" />
+        <div className="text-center mb-12 sm:mb-16 px-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl shadow-lg mb-6 transform hover:scale-105 transition-transform">
+            <DollarSign className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
-          <h1 className="text-5xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-yellow-600">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-yellow-600">
             Premium Hiring Services
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Get dedicated hiring support with our premium services. We help companies and consultancies
             find the perfect talent quickly and efficiently.
           </p>
@@ -208,10 +208,10 @@ export function PaidService() {
                 className="w-full h-64 object-cover"
               />
             </div>
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 h-fit sticky top-8">
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-100 h-fit lg:sticky lg:top-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-10 bg-gradient-to-b from-orange-500 to-yellow-600 rounded-full"></div>
-              <h2 className="text-3xl font-bold text-gray-900">What We Offer</h2>
+              <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-orange-500 to-yellow-600 rounded-full"></div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">What We Offer</h2>
             </div>
             <div className="space-y-4">
               {features.map((feature, index) => (
@@ -233,10 +233,10 @@ export function PaidService() {
           </div>
           </div>
 
-          <div className="lg:col-span-3 bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
+          <div className="lg:col-span-3 bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 border border-gray-100">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-10 bg-gradient-to-b from-orange-500 to-yellow-600 rounded-full"></div>
-              <h2 className="text-3xl font-bold text-gray-900">Request Information</h2>
+              <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-orange-500 to-yellow-600 rounded-full"></div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Request Information</h2>
             </div>
 
             {success && (

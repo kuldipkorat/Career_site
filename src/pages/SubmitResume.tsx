@@ -269,17 +269,17 @@ export function SubmitResume() {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-10 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-6 shadow-2xl transform hover:scale-110 transition-transform">
-            <Upload className="w-12 h-12 text-white" />
+        <div className="text-center mb-10 animate-fade-in px-4">
+          <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-6 shadow-2xl transform hover:scale-110 transition-transform">
+            <Upload className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             Submit Your <span className="text-blue-600">Resume</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Share your professional details and let top employers discover your talent
           </p>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-gray-500">
+          <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-gray-500">
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
               <span>Step 1 of 3</span>
@@ -295,14 +295,14 @@ export function SubmitResume() {
           </div>
         )}
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-10 border-2 border-blue-100">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 border-2 border-blue-100">
           <form onSubmit={handleSubmit}>
-            <div className="mb-10">
+            <div className="mb-8 sm:mb-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg text-sm sm:text-base">
                   1
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Personal Details</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Personal Details</h2>
               </div>
               <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full mb-8"></div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -404,12 +404,12 @@ export function SubmitResume() {
               </div>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-8 sm:mb-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg text-sm sm:text-base">
                   2
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Last / Current Company Details</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Last / Current Company Details</h2>
               </div>
               <div className="h-1 bg-gradient-to-r from-teal-600 to-teal-400 rounded-full mb-8"></div>
               <div className="space-y-4">
@@ -481,12 +481,12 @@ export function SubmitResume() {
               </div>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-8 sm:mb-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg text-sm sm:text-base">
                   3
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Additional Information</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Additional Information</h2>
               </div>
               <div className="h-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full mb-8"></div>
               <div className="space-y-4">
@@ -534,21 +534,21 @@ export function SubmitResume() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full py-5 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-500 text-white font-bold text-xl rounded-xl hover:from-blue-700 hover:via-blue-600 hover:to-teal-600 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.5)] hover:scale-105 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-lg relative overflow-hidden group"
+                className="w-full py-4 sm:py-5 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-500 text-white font-bold text-lg sm:text-xl rounded-xl hover:from-blue-700 hover:via-blue-600 hover:to-teal-600 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.5)] hover:scale-105 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2 sm:gap-3 shadow-lg relative overflow-hidden group"
               >
                 {submitting ? (
                   <>
-                    <div className="w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
                     <span>Submitting Your Resume...</span>
                   </>
                 ) : (
                   <>
-                    <Upload className="w-6 h-6" />
+                    <Upload className="w-5 h-5 sm:w-6 sm:h-6" />
                     <span>Submit Resume</span>
                   </>
                 )}
               </button>
-              <p className="text-center text-sm text-gray-500 mt-4">
+              <p className="text-center text-xs sm:text-sm text-gray-500 mt-4">
                 By submitting, you agree to our terms and privacy policy
               </p>
             </div>

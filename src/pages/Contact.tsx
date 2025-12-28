@@ -159,21 +159,21 @@ export function Contact() {
       }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl mb-6 shadow-2xl transform hover:scale-110 transition-transform">
-            <MessageSquare className="w-12 h-12 text-white" />
+        <div className="text-center mb-12 animate-fade-in px-4">
+          <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl mb-6 shadow-2xl transform hover:scale-110 transition-transform">
+            <MessageSquare className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             Get in <span className="text-blue-600">Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
             We'd love to hear from you. Reach out for any queries, support, or collaboration opportunities.
           </p>
-          <div className="flex items-center justify-center gap-4 text-sm">
-            <div className="flex items-center gap-2 px-4 py-2 bg-teal-100 rounded-full text-teal-700 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-100 rounded-full text-teal-700 font-medium">
               <span>24/7 Support</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full text-blue-700 font-medium shadow-md hover:shadow-lg transition-all hover:scale-105 border border-blue-200">
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full text-blue-700 font-medium shadow-md hover:shadow-lg transition-all hover:scale-105 border border-blue-200">
               <span>Quick Response</span>
             </div>
           </div>
@@ -244,9 +244,9 @@ export function Contact() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-10 border-2 border-teal-100">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <MessageSquare className="w-8 h-8 text-teal-600" />
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 border-2 border-teal-100">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 flex items-center gap-3">
+                <MessageSquare className="w-6 h-6 sm:w-8 sm:h-8 text-teal-600" />
                 Send us a Message
               </h2>
 
@@ -331,16 +331,16 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-5 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-500 text-white font-bold text-xl rounded-xl hover:from-blue-700 hover:via-blue-600 hover:to-teal-600 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.5)] hover:scale-105 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3 shadow-lg relative overflow-hidden group"
+                  className="w-full py-4 sm:py-5 bg-gradient-to-r from-blue-600 via-blue-500 to-teal-500 text-white font-bold text-lg sm:text-xl rounded-xl hover:from-blue-700 hover:via-blue-600 hover:to-teal-600 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(59,130,246,0.5)] hover:scale-105 disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2 sm:gap-3 shadow-lg relative overflow-hidden group"
                 >
                   {submitting ? (
                     <>
-                      <div className="w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
                       <span>Sending Message...</span>
                     </>
                   ) : (
                     <>
-                      <MessageSquare className="w-6 h-6" />
+                      <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
                       <span>Send Message</span>
                     </>
                   )}

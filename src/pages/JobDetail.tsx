@@ -238,24 +238,24 @@ export function JobDetail() {
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-10 border-2 border-blue-100">
-              <div className="flex items-start gap-6 mb-8">
-                <div className="p-5 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl shadow-xl">
-                  <Briefcase className="w-10 h-10 text-white" />
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 border-2 border-blue-100">
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div className="p-4 sm:p-5 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl shadow-xl">
+                  <Briefcase className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <div className="flex-1">
-                  <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">
+                <div className="flex-1 w-full">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3">
                     {job.job_title}
                   </h1>
-                  <div className="flex flex-wrap items-center gap-4 text-gray-700">
-                    <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105 border border-blue-100">
-                      <Building2 className="w-5 h-5 text-blue-600" />
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 text-sm sm:text-base text-gray-700">
+                    <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105 border border-blue-100">
+                      <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                       <span className="font-semibold">{job.company_name}</span>
                     </div>
-                    <div className="flex items-center gap-2 px-4 py-2 bg-teal-50 rounded-lg">
-                      <MapPin className="w-5 h-5 text-teal-600" />
+                    <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-50 rounded-lg">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-teal-600" />
                       <span className="font-medium">{job.job_location}</span>
                     </div>
                   </div>

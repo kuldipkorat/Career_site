@@ -145,31 +145,31 @@ export function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-2 bg-orange-500 rounded-full text-sm font-bold mb-6 animate-fade-in">
+            <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-orange-500 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 animate-fade-in">
               🎯 Your Trusted Career Partner
             </div>
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 animate-fade-in leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
               Find the <span className="text-orange-300">Best Jobs</span> Anywhere
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-blue-50 animate-fade-in font-light" style={{ lineHeight: '1.6' }}>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 text-blue-50 animate-fade-in font-light px-4 sm:px-0" style={{ lineHeight: '1.6' }}>
               Browse open positions, submit your resume, or connect as a company or consultancy.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in px-4 sm:px-0">
               <Link
                 to="/submit-resume"
-                className="px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-white transition-all duration-300 hover:scale-105 hover:shadow-xl text-lg border-2 border-blue-200 hover:border-blue-400"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-white transition-all duration-300 hover:scale-105 hover:shadow-xl text-base sm:text-lg border-2 border-blue-200 hover:border-blue-400 text-center"
               >
                 Submit Your Resume
               </Link>
               <Link
                 to="/post-job"
-                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-all hover:scale-105 hover:shadow-xl text-lg"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-all hover:scale-105 hover:shadow-xl text-base sm:text-lg text-center"
               >
                 Post a Job
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-4 bg-teal-500 text-white font-bold rounded-lg hover:bg-teal-600 transition-all hover:scale-105 hover:shadow-xl text-lg border-2 border-white"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-teal-500 text-white font-bold rounded-lg hover:bg-teal-600 transition-all hover:scale-105 hover:shadow-xl text-base sm:text-lg border-2 border-white text-center"
               >
                 Contact Us
               </Link>
@@ -178,10 +178,10 @@ export function Home() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-10">
-        <div className="bg-white rounded-xl shadow-xl p-8 border-2 border-gray-100">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <Search className="w-6 h-6 text-blue-600" />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 sm:-mt-16 relative z-10">
+        <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 md:p-8 border-2 border-gray-100">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Search className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
             Search Jobs
           </h2>
           <form onSubmit={handleSearch} className="space-y-4">
@@ -243,11 +243,11 @@ export function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        <div className="text-center mb-12 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             Latest Open <span className="text-blue-600">Jobs</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             Discover exciting career opportunities from top companies and consultancies
           </p>
         </div>
@@ -297,22 +297,22 @@ export function Home() {
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
             <div className="animate-fade-in">
-              <div className="text-5xl font-extrabold mb-2">500+</div>
-              <div className="text-blue-100 text-lg">Active Jobs</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">500+</div>
+              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Active Jobs</div>
             </div>
             <div className="animate-fade-in">
-              <div className="text-5xl font-extrabold mb-2">200+</div>
-              <div className="text-blue-100 text-lg">Companies</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">200+</div>
+              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Companies</div>
             </div>
             <div className="animate-fade-in">
-              <div className="text-5xl font-extrabold mb-2">1000+</div>
-              <div className="text-blue-100 text-lg">Candidates</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">1000+</div>
+              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Candidates</div>
             </div>
             <div className="animate-fade-in">
-              <div className="text-5xl font-extrabold mb-2">95%</div>
-              <div className="text-blue-100 text-lg">Success Rate</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">95%</div>
+              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Success Rate</div>
             </div>
           </div>
         </div>
@@ -320,11 +320,11 @@ export function Home() {
 
       <section className="bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <div className="text-center mb-12 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
               Explore <span className="text-teal-600">More Options</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               Whether you're looking for a job or hiring talent, we've got you covered
             </p>
           </div>

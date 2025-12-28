@@ -324,22 +324,22 @@ export function PostJob() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-10 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl mb-6 shadow-2xl transform hover:scale-110 transition-transform">
-            <Briefcase className="w-12 h-12 text-white" />
+        <div className="text-center mb-10 animate-fade-in px-4">
+          <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl mb-6 shadow-2xl transform hover:scale-110 transition-transform">
+            <Briefcase className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             Post a <span className="text-orange-600">Job</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             Fill in the details below to post your job opening and connect with talented candidates
           </p>
-          <div className="mt-6 flex items-center justify-center gap-4 text-sm">
-            <div className="flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-700 font-medium">
-              <Briefcase className="w-4 h-4" />
+          <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-orange-100 rounded-full text-orange-700 font-medium">
+              <Briefcase className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>Reach 1000+ candidates</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full text-blue-700 font-medium shadow-md hover:shadow-lg transition-all hover:scale-105 border border-blue-200">
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-100 to-blue-50 rounded-full text-blue-700 font-medium shadow-md hover:shadow-lg transition-all hover:scale-105 border border-blue-200">
               <span>Free posting</span>
             </div>
           </div>
@@ -351,14 +351,14 @@ export function PostJob() {
           </div>
         )}
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-10 border-2 border-orange-100">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 border-2 border-orange-100">
           <form onSubmit={handleSubmit}>
-            <div className="mb-10">
+            <div className="mb-8 sm:mb-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg text-sm sm:text-base">
                   1
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Company / Consultancy Details</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Company / Consultancy Details</h2>
               </div>
               <div className="h-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full mb-8"></div>
               <div className="space-y-4">
@@ -462,12 +462,12 @@ export function PostJob() {
               </div>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-8 sm:mb-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg text-sm sm:text-base">
                   2
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Job Details</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Job Details</h2>
               </div>
               <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full mb-8"></div>
               <div className="space-y-4">
@@ -615,12 +615,12 @@ export function PostJob() {
               </div>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-8 sm:mb-10">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg text-sm sm:text-base">
                   3
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Application Settings</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Application Settings</h2>
               </div>
               <div className="h-1 bg-gradient-to-r from-teal-600 to-teal-400 rounded-full mb-8"></div>
               <div className="space-y-4">
