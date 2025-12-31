@@ -21,10 +21,13 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-1.5 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg group-hover:shadow-md transition-all">
-              <Briefcase className="w-8 h-8 text-blue-600 transition-transform group-hover:scale-110 group-hover:rotate-12" />
+            <div className="p-1.5 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg group-hover:shadow-md transition-all">
+              <Briefcase className="w-7 h-7 sm:w-8 sm:h-8 text-white transition-transform group-hover:scale-110" />
             </div>
-            <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Career.io</span>
+            <div className="flex flex-col">
+              <span className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">Kutch Career</span>
+              <span className="text-[10px] sm:text-xs text-gray-500 leading-tight">Find Jobs in Kutch</span>
+            </div>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">

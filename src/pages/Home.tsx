@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Upload, DollarSign, Building2, MessageSquare } from 'lucide-react';
+import { Search, Upload, DollarSign, Building2, MessageSquare, Briefcase, Users, TrendingUp, Shield, AlertCircle } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { JobCard } from '../components/JobCard';
 
@@ -15,6 +15,39 @@ interface Job {
   is_featured: boolean;
 }
 
+const MOCK_JOBS: Job[] = [
+  {
+    id: 'mock-1',
+    job_title: 'Software Developer',
+    company_name: 'Tech Solutions Kutch',
+    job_location: 'Bhuj, Kutch',
+    job_category: 'IT',
+    job_description: 'We are looking for an experienced software developer to join our growing team in Kutch. Experience with React, Node.js, and databases required.',
+    created_at: new Date().toISOString(),
+    is_featured: true,
+  },
+  {
+    id: 'mock-2',
+    job_title: 'Sales Manager',
+    company_name: 'Kutch Industries Ltd',
+    job_location: 'Gandhidham, Kutch',
+    job_category: 'Sales',
+    job_description: 'Lead our sales team in the Kutch region. Minimum 3 years experience in B2B sales required.',
+    created_at: new Date().toISOString(),
+    is_featured: false,
+  },
+  {
+    id: 'mock-3',
+    job_title: 'Fresher Trainee',
+    company_name: 'Gujarat Manufacturing Co',
+    job_location: 'Mundra, Kutch',
+    job_category: 'Freshers',
+    job_description: 'Training program for fresh graduates. Great opportunity to start your career in manufacturing sector.',
+    created_at: new Date().toISOString(),
+    is_featured: false,
+  },
+];
+
 const categories = [
   'IT',
   'Sales',
@@ -25,7 +58,9 @@ const categories = [
   'Education',
   'Engineering',
   'Operations',
-  'Customer Service',
+  'Manufacturing',
+  'Government',
+  'Freshers',
   'Other',
 ];
 
@@ -33,6 +68,7 @@ export function Home() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -47,17 +83,27 @@ export function Home() {
 
   const fetchJobs = async () => {
     try {
-      const { data, error } = await supabase
+      setError(null);
+      const { data, error: fetchError } = await supabase
         .from('jobs')
         .select('*')
         .eq('status', 'active')
         .order('created_at', { ascending: false });
 
-      if (error) throw error;
-      setJobs(data || []);
-      setFilteredJobs(data || []);
+      if (fetchError) throw fetchError;
+
+      if (data && data.length > 0) {
+        setJobs(data);
+        setFilteredJobs(data);
+      } else {
+        setJobs(MOCK_JOBS);
+        setFilteredJobs(MOCK_JOBS);
+      }
     } catch (error) {
       console.error('Error fetching jobs:', error);
+      setError('Unable to load jobs from server. Showing sample jobs.');
+      setJobs(MOCK_JOBS);
+      setFilteredJobs(MOCK_JOBS);
     } finally {
       setLoading(false);
     }
@@ -132,46 +178,51 @@ export function Home() {
     },
   ];
 
+  const jobCategories = [
+    { name: 'IT & Software', icon: '💻', count: filteredJobs.filter(j => j.job_category === 'IT').length, category: 'IT' },
+    { name: 'Sales & Marketing', icon: '📊', count: filteredJobs.filter(j => ['Sales', 'Marketing'].includes(j.job_category)).length, category: 'Sales' },
+    { name: 'Manufacturing', icon: '🏭', count: filteredJobs.filter(j => j.job_category === 'Manufacturing').length, category: 'Manufacturing' },
+    { name: 'Government', icon: '🏛️', count: filteredJobs.filter(j => j.job_category === 'Government').length, category: 'Government' },
+    { name: 'Freshers', icon: '🎓', count: filteredJobs.filter(j => j.job_category === 'Freshers').length, category: 'Freshers' },
+    { name: 'Healthcare', icon: '⚕️', count: filteredJobs.filter(j => j.job_category === 'Healthcare').length, category: 'Healthcare' },
+  ];
+
   return (
     <div className="min-h-screen">
-      <section className="relative bg-blue-600 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 text-white py-16 sm:py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920"
             alt="Professional workspace"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-700/90"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-orange-500 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 animate-fade-in">
-              🎯 Your Trusted Career Partner
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 border border-white/30">
+              <span>🌟</span>
+              <span>Kutch's Premier Job Portal</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 animate-fade-in leading-tight" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-              Find the <span className="text-orange-300">Best Jobs</span> Anywhere
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight">
+              Find Jobs in <span className="text-yellow-300">Kutch</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 text-blue-50 animate-fade-in font-light px-4 sm:px-0" style={{ lineHeight: '1.6' }}>
-              Browse open positions, submit your resume, or connect as a company or consultancy.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 text-blue-50 font-light px-4 sm:px-0" style={{ lineHeight: '1.6' }}>
+              Local jobs and career opportunities in the Kutch region. Connect with top employers and grow your career.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
               <Link
                 to="/submit-resume"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-white transition-all duration-300 hover:scale-105 hover:shadow-xl text-base sm:text-lg border-2 border-blue-200 hover:border-blue-400 text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-2xl text-base sm:text-lg"
               >
-                Submit Your Resume
+                <Upload className="w-5 h-5" />
+                Submit Resume
               </Link>
               <Link
                 to="/post-job"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-all hover:scale-105 hover:shadow-xl text-base sm:text-lg text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-500 text-gray-900 font-bold rounded-lg hover:bg-yellow-400 transition-all hover:scale-105 hover:shadow-2xl text-base sm:text-lg"
               >
+                <Briefcase className="w-5 h-5" />
                 Post a Job
-              </Link>
-              <Link
-                to="/contact"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-teal-500 text-white font-bold rounded-lg hover:bg-teal-600 transition-all hover:scale-105 hover:shadow-xl text-base sm:text-lg border-2 border-white text-center"
-              >
-                Contact Us
               </Link>
             </div>
           </div>
@@ -252,22 +303,36 @@ export function Home() {
           </p>
         </div>
 
+        {error && (
+          <div className="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+            <div className="flex items-start gap-3">
+              <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-yellow-800">{error}</p>
+            </div>
+          </div>
+        )}
+
         {loading ? (
-          <div className="text-center py-12">
-            <p className="text-gray-600">Loading jobs...</p>
+          <div className="text-center py-16">
+            <div className="inline-block w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p className="text-gray-600 text-lg">Loading jobs...</p>
           </div>
         ) : filteredJobs.length === 0 ? (
-          <div className="text-center py-12 bg-gray-50 rounded-lg">
-            <p className="text-gray-600 text-lg">No jobs found matching your criteria.</p>
+          <div className="text-center py-16 bg-gray-50 rounded-xl">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 rounded-full mb-4">
+              <Search className="w-8 h-8 text-gray-400" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No jobs found</h3>
+            <p className="text-gray-600 mb-4">Try adjusting your search criteria</p>
             <button
               onClick={() => {
                 setSearchKeyword('');
                 setSelectedLocation('');
                 setSelectedCategory('');
               }}
-              className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
-              Clear filters
+              Clear all filters
             </button>
           </div>
         ) : (
@@ -288,31 +353,87 @@ export function Home() {
         )}
       </section>
 
-      <section className="relative bg-blue-600 text-white py-16 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Team collaboration"
-            className="w-full h-full object-cover opacity-10"
-          />
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+              Browse by <span className="text-blue-600">Category</span>
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600">
+              Find opportunities in your field of expertise
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {jobCategories.map((cat) => (
+              <button
+                key={cat.category}
+                onClick={() => {
+                  setSelectedCategory(cat.category);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-blue-200 group"
+              >
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{cat.icon}</div>
+                <h3 className="font-bold text-gray-900 mb-1 text-sm">{cat.name}</h3>
+                <p className="text-xs text-gray-500">{cat.count} {cat.count === 1 ? 'job' : 'jobs'}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
-            <div className="animate-fade-in">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">500+</div>
-              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Active Jobs</div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+              Why Choose <span className="text-yellow-300">Kutch Career Platform?</span>
+            </h2>
+            <p className="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto">
+              Your trusted partner for local employment in the Kutch region
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+              <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+                <Briefcase className="w-6 h-6 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Local Focus</h3>
+              <p className="text-blue-100 text-sm">
+                Jobs exclusively from Kutch region companies and industries
+              </p>
             </div>
-            <div className="animate-fade-in">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">200+</div>
-              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Companies</div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+              <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Verified Employers</h3>
+              <p className="text-blue-100 text-sm">
+                All companies are verified to ensure genuine opportunities
+              </p>
             </div>
-            <div className="animate-fade-in">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">1000+</div>
-              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Candidates</div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+              <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Quick Hiring</h3>
+              <p className="text-blue-100 text-sm">
+                Fast-track application process with direct employer connect
+              </p>
             </div>
-            <div className="animate-fade-in">
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 sm:mb-2">95%</div>
-              <div className="text-blue-100 text-sm sm:text-base md:text-lg">Success Rate</div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+              <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Free for All</h3>
+              <p className="text-blue-100 text-sm">
+                100% free job search and resume submission for candidates
+              </p>
             </div>
           </div>
         </div>
