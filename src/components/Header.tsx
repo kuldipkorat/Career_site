@@ -20,10 +20,12 @@ export function Header() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-1.5 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg group-hover:shadow-md transition-all">
-              <Briefcase className="w-7 h-7 sm:w-8 sm:h-8 text-white transition-transform group-hover:scale-110" />
-            </div>
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
+            <img
+              src="/gemini_generated_image_qiafgwqiafgwqiaf.png"
+              alt="Kutch Career Logo"
+              className="w-10 h-10 sm:w-12 sm:h-12 transition-transform group-hover:scale-105"
+            />
             <div className="flex flex-col">
               <span className="text-lg sm:text-xl font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">Kutch Career</span>
               <span className="text-[10px] sm:text-xs text-gray-500 leading-tight">Find Jobs in Kutch</span>
